@@ -14,21 +14,16 @@
     <framework.version>1.1.0-SNAPSHOT</framework.version>
 
     <!-- 三方包版本 -->
+
     <!-- spring boot 版本-->
     <spring.boot.version>2.7.13</spring.boot.version>
-  </properties>
+    <!-- 数据库 -->
+    <h2.version>1.4.200</h2.version>
+    <mysql.version>8.0.32</mysql.version>
+    <!-- 测试框架 -->
 
-  <dependencyManagement>
-    <dependencies>
-      <!-- 三方包 -->
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring.boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+    <!-- 其他 -->
+    <lombok.version>1.18.26</lombok.version>
+  </properties>
 
 </project>
