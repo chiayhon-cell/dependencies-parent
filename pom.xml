@@ -16,10 +16,13 @@
     <!-- 三方包版本 -->
     <!-- spring boot 版本-->
     <springboot.version>2.3.12.RELEASE</springboot.version>
-    <!-- spring boot starter 版本 -->
+    <!-- mybatis starter 版本 -->
     <mybatis.starter.version>2.1.4</mybatis.starter.version>
-    <!-- 数据库:h2、mysql -->
+    <!-- mybatis-plus starter 版本 -->
+    <mybatis.plus.starter.version>3.5.3.2</mybatis.plus.starter.version>
+    <!-- 数据库:h2 -->
     <h2.version>1.4.200</h2.version>
+    <!-- 数据库:mysql -->
     <mysql.version>8.0.32</mysql.version>
     <!-- 测试框架 -->
 
