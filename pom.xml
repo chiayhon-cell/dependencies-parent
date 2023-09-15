@@ -34,39 +34,66 @@
   <profiles>
     <!-- 开发环境 -->
     <profile>
-      <id>develop</id>
+      <id>aliops-dev</id>
       <!-- 默认激活 -->
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
-      <!-- 构建分发管理配置 -->
+      <!-- 自定义属性 -->
+      <properties>
+        <profile.active>develop</profile.active>
+      </properties>
+      <!-- 部署仓库配置：构件分发 -->
       <distributionManagement>
         <!-- release 仓库 -->
         <repository>
-          <id>aliops</id>
+          <id>aliops-dev-releases</id>
           <name>Releases Repository</name>
           <url>https://packages.aliyun.com/maven/repository/2417162-release-iNZDTy</url>
         </repository>
         <!-- snapshot 仓库 -->
         <snapshotRepository>
-          <id>aliops</id>
+          <id>aliops-dev-snapshots</id>
           <name>Snapshots Repository</name>
           <url>https://packages.aliyun.com/maven/repository/2417162-snapshot-AjHYmz</url>
           <!-- 构件可重复 -->
-          <uniqueVersion>false</uniqueVersion>
+          <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
       </distributionManagement>
-      <!-- 索引仓库 -->
+      <!-- 拉取仓库配置 -->
       <repositories>
+        <!-- 阿里公库 -->
         <repository>
-          <id>aliops</id>
-          <name>Aliyun Public Repository</name>
-          <url>https://maven.aliyun.com/repository/public</url>
-          <!-- 开启快照检索 -->
+          <id>public</id>
+          <url>https://maven.aliyun.com/nexus/content/groups/public</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
           <snapshots>
             <enabled>true</enabled>
-            <!-- 每五分钟检索一次 -->
-            <updatePolicy>interval:5</updatePolicy>
+          </snapshots>
+        </repository>
+        <!-- 阿里云效开发环境releases库 -->
+        <repository>
+          <id>aliops-dev-releases</id>
+          <url>https://packages.aliyun.com/maven/repository/2417162-release-iNZDTy/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <!-- 阿里云效开发环境snapshots库 -->
+        <repository>
+          <id>aliops-dev-snapshots</id>
+          <url>https://packages.aliyun.com/maven/repository/2417162-snapshot-AjHYmz/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
           </snapshots>
         </repository>
       </repositories>
